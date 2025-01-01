@@ -1,0 +1,46 @@
+{
+    "always_apply_defaults": true,
+    "can_invoke_multiple_rules": false,
+    "defaults": {
+        "set_queue_length": {
+            "value": 6
+        },
+        "set_vip_slots_num": {
+            "value": 2
+        },
+        "set_max_ping_autokick": {
+            "max_ms": 500
+        },
+        "set_votekick_threshold": {
+            "threshold_pairs": "0,3,10,6,20,11,30,16,40,21"
+        },
+        "set_autobalance_enabled": {
+            "value": false
+        },
+        "set_map_shuffle_enabled": {
+            "enabled": false
+        },
+        "set_autobalance_threshold": {
+            "max_diff": 0
+        },
+        "set_idle_autokick_time": {
+            "minutes": 0
+        },
+        "set_team_switch_cooldown": {
+            "minutes": 0
+        }
+    },
+    "rules": [
+        {
+            "commands": {
+                "set_broadcast": {
+                    "save": true,
+                    "message": "                                   Viel Erfolg und habt Spaß.                                   Good luck and have fun.                                   Удачи и приятного времяпрепровождения.                                   Bonne chance et amusez-vous."
+                },
+                "set_welcome_message": {
+                    "message": "Viel Erfolg und habt Spaß.\nGood luck and have fun.\nУдачи и приятного времяпрепровождения.\nBonne chance et amusez-vous."
+                }
+            }
+        }
+    ]
+}

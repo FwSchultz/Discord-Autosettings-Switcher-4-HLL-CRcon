@@ -1,0 +1,112 @@
+{
+  "always_apply_defaults": true,
+  "can_invoke_multiple_rules": false,
+  "defaults": {
+    "set_queue_length": {
+      "value": 6
+    },
+    "set_vip_slots_num": {
+      "value": 2
+    },
+    "set_max_ping_autokick": {
+      "max_ms": 350
+    },
+    "set_votekick_threshold": {
+      "threshold_pairs": "0,3,10,6,20,11,30,16,40,21"
+    },
+    "set_autobalance_enabled": {
+      "value": true
+    },
+    "set_map_shuffle_enabled": {
+      "enabled": false
+    },
+    "set_autobalance_threshold": {
+      "max_diff": 1
+    }
+  },
+  "rules": [
+    {
+      "commands": {
+        "set_broadcast": {
+          "save": true,
+          "message": "Wir Seeden den Server! Bitte nur um den dritten Punkt bespielen."
+        },
+        "set_welcome_message": {
+          "message": "Willkommen, Soldat! Geil, dass du bei uns bist!!\nIm Moment wird der Server geseeden.\n\nBis inklusive 40 Spieler gelten folgende REGELN:\n\n- Kampf nur um den mittleren Punkt\n- die Garnies in der D bzw. G oder in der 4er und 7er Linie nicht abbauen(RedZone)\n- Keine Panzer außer Recon-Tanks\n- Keine Arty\n- Mic-Pflicht für alle\n- Saubere Umgangsformen\n- Kein Getrolle (gezielte TKs, wildes Gespamme via Voice oder Chat, ...)\n\n- Beschwerden immer im DC abklären: discord.gg/kampfgruppelazarus\n- Die Admins helfen euch auch, wenn ihr !admin + GRUND in den Chat eingebt.\n\nStreaming-Regeln:\nNutzt bitte ein Map-Overlay. Wenn IHR nicht wisst wie das geht meldet euch bei uns im Discord und wir richten Dir das ein.\n\nBesucht uns doch auf unserer Homepage unter: www.kampfgruppelazarus.de\nUnd jetzt: Viel Spaß und ATTACKEEE!\n\nP.S.: Bei FRAGEN zum Spiel oder zu uns, oder wenn ihr einfach MITSPIELER sucht, wird euch ebenfalls im Discord geholfen:\n--> discord.kampfgruppelazarus.de\nBesucht uns doch auf unserer Homepage unter: www.kampfgruppelazarus.de"
+        },
+        "set_votemap_whitelist": {
+          "map_names": [
+            "carentan_warfare",
+            "stmereeglise_warfare",
+            "stmariedumont_warfare",
+            "utahbeach_warfare",
+            "omahabeach_warfare",
+            "mortain_warfare_day",
+            "elsenbornridge_warfare_day",
+            "elsenbornridge_warfare_morning"
+          ]
+        },
+        "set_idle_autokick_time": {
+          "minutes": 0
+        },
+        "set_team_switch_cooldown": {
+          "minutes": 15
+        },
+        "set_autobalance_threshold": {
+          "max_diff": 1
+        }
+      },
+      "conditions": {
+        "player_count": {
+          "max": 39,
+          "min": 0
+        }
+      }
+    },
+    {
+      "commands": {
+        "set_broadcast": {
+          "save": true,
+          "message": "Das Seeden des Servers ist durch. Nun sind alle Punkte freigegeben!"
+        },
+        "set_welcome_message": {
+          "message": "Willkommen Soldat! Geil, dass Du bei uns bist!!\n\nUnser Regelwerk:\n\n- MicPflicht für alle Spieler\n- SL-Chat auf Deutsch\n- Saubere Umgangsformen\n- Keine Solo-Tanks\n- HQ-Farming ist erlaubt\n- Kein Getrolle (gezielte TKs, wildes Gespamme via Voice oder Chat, ...)\n\n- Beschwerden immer im DC abklären: discord.gg/kampfgruppelazarus\n- Die Admins helfen euch auch, wenn ihr !admin + GRUND in den Chat eingebt.\n- Wollt ihr geswitcht werden gebt ein !switch in den Chat ein. Dies wird ABER von den Admins zwecks Balance selbst bewertet.\n- Anschließend bitte kurz abwarten!\n- Wer die Admins mehrfach unnötig oder nichtssagend zuspammt, fliegt!\n\nStreaming-Regeln:\nNutzt bitte ein Map-Overlay. Wenn IHR nicht wisst wie das geht meldet euch bei uns im Discord und wir richten Dir das ein.\n\nBesucht uns doch auf unserer Homepage unter: www.kampfgruppelazarus.de\nUnd jetzt: Viel Spaß und ATTACKEEE!\n\nP.S.: Bei FRAGEN zum Spiel oder zu uns, oder wenn ihr einfach MITSPIELER sucht, wird euch ebenfalls im Discord geholfen:\n--> discord.gg/kampfgruppelazarus.de\nBesucht uns doch auf unserer Homepage unter: www.kampfgruppelazarus.de"
+        },
+        "set_votemap_whitelist": {
+          "map_names": [
+            "carentan_warfare",
+            "foy_warfare",
+            "hill400_warfare",
+            "hurtgenforest_warfare_V2",
+            "kharkov_warfare",
+            "mortain_warfare_day",
+            "omahabeach_warfare",
+            "stmariedumont_warfare",
+            "stmereeglise_warfare",
+            "utahbeach_warfare",
+            "elsenbornridge_warfare_day",
+            "PHL_L_1944_Warfare",
+            "driel_warfare",
+            "stalingrad_warfare",
+            "remagen_warfare"
+          ]
+        },
+        "set_idle_autokick_time": {
+          "minutes": 15
+        },
+        "set_team_switch_cooldown": {
+          "minutes": 15
+        },
+        "set_autobalance_threshold": {
+          "max_diff": 2
+        }
+      },
+      "conditions": {
+        "player_count": {
+          "max": 100,
+          "min": 40
+        }
+      }
+    }
+  ]
+}
