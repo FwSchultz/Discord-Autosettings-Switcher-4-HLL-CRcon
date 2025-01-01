@@ -1,9 +1,16 @@
-# Discord Bot mit CRCON-Integration
+<h1 align="center" style="font-weight: bold;">Discord  - Autosettings Switcher 4 Hell let Loose CRcon</h1>
 
-Ein Discord-Bot zur Verwaltung von Servereinstellungen des CRCON-Tools, einschließlich der Funktionen:
 
-- Anwenden von Servereinstellungen (`/apply_settings`)
-- Leeren des Server-Caches (`/clear_cache`)
+<p align="center">Dies ist ein  Discord-Bot zum Switchen von Autosetting (public und competitive) des CRCON-Tools.</p>
+
+
+
+<h2 id="layout"></h2>
+
+<p align="center">
+
+<img src="https://i.imgur.com/8XmDwWF.png" alt="Random Image" width="400px">
+</p>
 
 ## Voraussetzunge.
 
