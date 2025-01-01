@@ -81,9 +81,9 @@ Ersetze die Platzhalter durch die tatsächlichen Werte:
 > [!TIP]
 > eine .env ist schon vorhanden die muss nur angepasst werden.
 
-```shell
-cp .env.dev .env
-```
+>```shell
+>cp .env.dev .env
+>```
 
 ### 6. Konfigurationsdateien vorbereiten
 
