@@ -52,7 +52,17 @@ PERMISSIONS: READ MESSAGE HISTORY, SEND MESSAGES, ATTACH FILES, EMBED LINKS und 
 Unter Privileged Gateway Intents: Message Content Intent aktivieren
 ```
 
-### 4. Umgebungsvariablen konfigurieren
+### 4. CRCON-User-Rechte
+
+Welches Konto Du auch verwendest, es muss mindestens über diese Berechtigungen verfügen:
+
+```
+- api|rcon user| Can clear the CRCON Redis cache
+- api|rcon user| Can change auto settings
+- api|rcon user| Can view auto settings
+```
+
+### 5. Umgebungsvariablen konfigurieren
 
 Erstelle eine `.env`-Datei im Projektverzeichnis mit folgendem Inhalt:
 
@@ -75,7 +85,7 @@ Ersetze die Platzhalter durch die tatsächlichen Werte:
 cp .env.dev .env
 ```
 
-### 5. Konfigurationsdateien vorbereiten
+### 6. Konfigurationsdateien vorbereiten
 
 Die Dateien `public_settings.json` und `competitive_settings.json` sind im Ordner schon vorhanden. Ihr müsst nur eure gewünschten Servereinstellungen hinzufügen bzw. abändern
 
