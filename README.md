@@ -18,8 +18,8 @@ Ein Discord-Bot zur Verwaltung von Servereinstellungen des CRCON-Tools, einschli
 
 ```bash
 # Klone das Projekt-Repository
-git clone <REPOSITORY_URL>
-cd <REPOSITORY_ORDNER>
+git clone https://github.com/FwSchultz/Discord-Autosettings-Switcher-4-HLL-CRcon
+cd Discord-Autosettings-Switcher-4-HLL-CRcon
 ```
 
 ### 2. Virtuelle Umgebung erstellen und aktivieren
