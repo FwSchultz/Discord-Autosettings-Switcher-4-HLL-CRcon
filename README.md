@@ -1,7 +1,7 @@
 <h1 align="center" style="font-weight: bold;">Discord  - Autosettings Switcher 4 Hell let Loose CRcon</h1>
 
 
-<p align="center">Dies ist ein  Discord-Bot zum Switchen von Autosetting (public und competitive) des CRCON-Tools.</p>
+<p align="center">Dies ist ein  Discord-Bot zum switchen von verschiedenen Autosettings (public und competitive) im CRCON-Tools.</p>
 
 
 
@@ -14,7 +14,7 @@
 
 ## Voraussetzunge.
 
-1. **Python:** Version 3.8 oder höher.
+1. **Python:** Version 3.12 oder höher.
 2. **CRCON-API:** Zugang zu einem CRCON-Server mit gültigem API-Key.
 3. **Discord Bot:** Erstelle einen Bot im [Discord Developer Portal](https://discord.com/developers/applications).
 4. **JSON-Konfigurationsdateien:** Stelle sicher, dass die Dateien `public_settings.json` und `competitive_settings.json` korrekt konfiguriert sind.
@@ -29,17 +29,27 @@ git clone https://github.com/FwSchultz/Discord-Autosettings-Switcher-4-HLL-CRcon
 cd Discord-Autosettings-Switcher-4-HLL-CRcon
 ```
 
-### 2. Virtuelle Umgebung erstellen und aktivieren
-
-```bash
-python3 -m venv venv
-source venv/bin/activate  # Auf Windows: venv\Scripts\activate
-```
-
-### 3. Abhängigkeiten installieren
+### 2. Abhängigkeiten installieren
 
 ```bash
 pip install -r requirements.txt
+```
+
+### 3. Discord-Bot erstellen
+
+3.1 Erstelle einen Bot unter [Discord Developer Portal](https://discord.com/developers/applications).
+
+3.2 geht zum Reiter `Installation` und gebt dem Bot folgende Rechte unter Guild Install
+
+```discord bot rechte
+SCOPES: applications.commands und bot
+PERMISSIONS: READ MESSAGE HISTORY, SEND MESSAGES, ATTACH FILES, EMBED LINKS und USE SLASH COMMANDS
+```
+
+3.3 geht zum Reiter `Bot`
+
+```
+Unter Privileged Gateway Intents: Message Content Intent aktivieren
 ```
 
 ### 4. Umgebungsvariablen konfigurieren
@@ -48,7 +58,7 @@ Erstelle eine `.env`-Datei im Projektverzeichnis mit folgendem Inhalt:
 
 ```env
 DISCORD_BOT_TOKEN=<DISCORD_BOT_TOKEN>
-CRCON_API_URL=http://<CRCON_API_URL>:<PORT>/api
+CRCON_API_URL=http://<CRCON_API_URL>:<PORT>
 CRCON_API_KEY=<CRCON_API_KEY>
 ```
 
@@ -58,31 +68,20 @@ Ersetze die Platzhalter durch die tatsächlichen Werte:
 - `<CRCON_API_URL>`: Basis-URL der CRCON-API.
 - `<CRCON_API_KEY>`: API-Key für die Authentifizierung.
 
+> [!TIP]
+> eine .env ist schon vorhanden die muss nur angepasst werden.
+
+```shell
+cp .env.dev .env
+```
+
 ### 5. Konfigurationsdateien vorbereiten
 
-Erstelle die Dateien `public_settings.json` und `competitive_settings.json` im Projektordner mit den gewünschten Servereinstellungen, z. B.:
+Die Dateien `public_settings.json` und `competitive_settings.json` sind im Ordner schon vorhanden. Ihr müsst nur eure gewünschten Servereinstellungen hinzufügen bzw. abändern
 
-#### `public_settings.json`
+> [!TIP]
+> Eine Doku für die Autosettings findet ihr unter [HLL-RCON-Tool-Wiki](https://github.com/MarechJ/hll_rcon_tool/wiki/User-Guide-%E2%80%90-Main-interface-%E2%80%90-Settings-%E2%80%90-Autosettings)
 
-```json
-{
-  "type": "public",
-  "friendly_fire": false,
-  "max_players": 100,
-  "allow_vote_kick": true
-}
-```
-
-#### `competitive_settings.json`
-
-```json
-{
-  "type": "competitive",
-  "friendly_fire": true,
-  "max_players": 80,
-  "allow_vote_kick": false
-}
-```
 
 ## Verwendung
 
@@ -92,7 +91,7 @@ Erstelle die Dateien `public_settings.json` und `competitive_settings.json` im P
 python bot.py
 ```
 
-### Verfügbare Befehle
+### Verfügbare Befehle im Discord
 
 #### 1. `/apply_settings`
 
@@ -131,5 +130,4 @@ Dieses Projekt steht unter der MIT-Lizenz. Siehe die `LICENSE`-Datei für weiter
 
 Bei Fragen oder Problemen kannst du dich an den Projektmaintainer wenden:
 
-- **Discord:** [Dein Discord-Name]
-- **E-Mail:** [Deine E-Mail-Adresse]
+- **Discord:** [Fw.Schultz](https://discord.gg/tKhMCr2ZYZ)
