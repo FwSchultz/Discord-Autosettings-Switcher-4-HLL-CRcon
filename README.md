@@ -1,133 +1,117 @@
-<h1 align="center" style="font-weight: bold;">Discord  - Autosettings Switcher 4 Hell let Loose CRcon</h1>
 
+<h1 align="center" style="font-weight: bold;">Discord - Autosettings Switcher for Hell Let Loose CRcon</h1>
 
-<p align="center">Dies ist ein  Discord-Bot zum switchen von verschiedenen Autosettings (public und competitive) im CRCON-Tools.</p>
-
-
+<p align="center">This is a Discord bot for switching between different autosettings (public and competitive) in the CRCON tool.</p>
 
 <h2 id="layout"></h2>
 
 <p align="center">
-
-<img src="https://i.imgur.com/8XmDwWF.png" alt="Random Image" width="400px">
+<img src="https://i.imgur.com/8XmDwWF.png" alt="Random Image" width="250px">
 </p>
 
-## Voraussetzunge.
+## Requirements
 
-1. **Python:** Version 3.12 oder höher.
-2. **CRCON-API:** Zugang zu einem CRCON-Server mit gültigem API-Key.
-3. **Discord Bot:** Erstelle einen Bot im [Discord Developer Portal](https://discord.com/developers/applications).
-4. **JSON-Konfigurationsdateien:** Stelle sicher, dass die Dateien `public_settings.json` und `competitive_settings.json` korrekt konfiguriert sind.
+1. **Python:** Version 3.12 or higher.
+2. **CRCON-API:** Access to a CRCON server with a valid API key.
+3. **Discord Bot:** Create a bot in the [Discord Developer Portal](https://discord.com/developers/applications).
+4. **JSON Configuration Files:** Ensure the files `public_settings.json` and `competitive_settings.json` are correctly configured.
 
 ## Installation
 
-### 1. Repository klonen
+### 1. Clone the Repository
 
 ```bash
-# Klone das Projekt-Repository
+# Clone the project repository
 git clone https://github.com/FwSchultz/Discord-Autosettings-Switcher-4-HLL-CRcon
 cd Discord-Autosettings-Switcher-4-HLL-CRcon
 ```
 
-### 2. Abhängigkeiten installieren
+### 2. Install Dependencies
 
 ```bash
 pip install -r requirements.txt
 ```
 
-### 3. Discord-Bot erstellen
+### 3. Create a Discord Bot
 
-3.1 Erstelle einen Bot unter [Discord Developer Portal](https://discord.com/developers/applications).
+3.1 Create a bot in the [Discord Developer Portal](https://discord.com/developers/applications).
 
-3.2 geht zum Reiter `Installation` und gebt dem Bot folgende Rechte unter Guild Install
+3.2 Go to the `OAuth2` tab and grant the bot the following permissions under `Scopes` and `Bot Permissions`:
 
-```discord bot rechte
-SCOPES: applications.commands und bot
-PERMISSIONS: READ MESSAGE HISTORY, SEND MESSAGES, ATTACH FILES, EMBED LINKS und USE SLASH COMMANDS
+```discord bot permissions
+SCOPES: applications.commands and bot
+PERMISSIONS: READ MESSAGE HISTORY, SEND MESSAGES, ATTACH FILES, EMBED LINKS, and USE SLASH COMMANDS
 ```
 
-3.3 geht zum Reiter `Bot`
+3.3 Navigate to the `Bot` tab:
 
 ```
-Unter Privileged Gateway Intents: Message Content Intent aktivieren
+Enable the "Message Content Intent" under Privileged Gateway Intents.
 ```
 
-### 4. Umgebungsvariablen konfigurieren
+### 4. Configure Environment Variables
 
-Erstelle eine `.env`-Datei im Projektverzeichnis mit folgendem Inhalt:
+Create a `.env` file in the project directory with the following content:
 
 ```env
 DISCORD_BOT_TOKEN=<DISCORD_BOT_TOKEN>
 CRCON_API_URL=http://<CRCON_API_URL>:<PORT>
 CRCON_API_KEY=<CRCON_API_KEY>
+ALLOWED_ROLE_IDS=<ROLE_ID1,ROLE_ID2,...>
+LANGUAGE=<LANGUAGE>
 ```
 
-Ersetze die Platzhalter durch die tatsächlichen Werte:
+Replace the placeholders with your actual values:
 
-- `<DISCORD_BOT_TOKEN>`: Token deines Discord-Bots.
-- `<CRCON_API_URL>`: Basis-URL der CRCON-API.
-- `<CRCON_API_KEY>`: API-Key für die Authentifizierung.
+- `<DISCORD_BOT_TOKEN>`: Your Discord bot token.
+- `<CRCON_API_URL>`: Base URL of the CRCON API.
+- `<CRCON_API_KEY>`: API key for authentication.
+- `<ROLE_ID1,ROLE_ID2,...>`: Discord Role ID that can use that Tool
+- `<LANGUAGE>`: Available languages: [‘de’, ‘en’, ‘fr’, ‘es’]
 
 > [!TIP]
-> eine .env ist schon vorhanden die muss nur angepasst werden.
+> A `.env` file template is already provided; you just need to modify it:
 
 ```shell
 cp .env.dev .env
 ```
 
-### 5. Konfigurationsdateien vorbereiten
+### 5. Prepare Configuration Files
 
-Die Dateien `public_settings.json` und `competitive_settings.json` sind im Ordner schon vorhanden. Ihr müsst nur eure gewünschten Servereinstellungen hinzufügen bzw. abändern
+The files `public_settings.json` and `competitive_settings.json` are already included in the folder. You just need to add or modify the desired server settings.
 
 > [!TIP]
-> Eine Doku für die Autosettings findet ihr unter [HLL-RCON-Tool-Wiki](https://github.com/MarechJ/hll_rcon_tool/wiki/User-Guide-%E2%80%90-Main-interface-%E2%80%90-Settings-%E2%80%90-Autosettings)
+> Documentation for the autosettings can be found in the [HLL RCON Tool Wiki](https://github.com/MarechJ/hll_rcon_tool/wiki/User-Guide-%E2%80%90-Main-interface-%E2%80%90-Settings-%E2%80%90-Autosettings).
 
+## Usage
 
-## Verwendung
-
-### Bot starten
+### Start the Bot
 
 ```bash
 python bot.py
 ```
 
-### Verfügbare Befehle im Discord
+### Available Commands in Discord
 
 #### 1. `/apply_settings`
 
-Wendet die Einstellungen aus den JSON-Dateien auf den Server an und leert anschließend den Cache.
+Applies settings from the JSON files to the server and clears the cache afterward.
 
 - **Syntax:** `/apply_settings <public|competitive>`
-- **Beispiel:** `/apply_settings public`
+- **Example:** `/apply_settings public`
 
 #### 2. `/clear_cache`
 
-Leert den Server-Cache.
+Clears the server cache.
 
 - **Syntax:** `/clear_cache`
 
-## Fehlerbehebung
+## License
 
-### 1. Bot reagiert nicht auf Befehle
+This project is licensed under the MIT License. See the `LICENSE` file for details.
 
-- Stelle sicher, dass der Bot die erforderlichen Berechtigungen hat (z. B. `application.commands`).
-- Überprüfe, ob der Bot im Discord-Developer-Portal korrekt registriert ist.
+## Contact
 
-### 2. API-Fehler
-
-- **500-Fehler:** Überprüfe die Struktur der JSON-Dateien und stelle sicher, dass sie mit den API-Erwartungen übereinstimmen.
-- **404-Fehler:** Vergewissere dich, dass die `CRCON_API_URL` korrekt ist.
-
-### 3. Cache wird nicht geleert
-
-- Stelle sicher, dass der Cache-Endpunkt `/api/clear_cache` verfügbar ist und einen leeren Payload akzeptiert (`{}`).
-
-## Lizenz
-
-Dieses Projekt steht unter der MIT-Lizenz. Siehe die `LICENSE`-Datei für weitere Details.
-
-## Kontakt
-
-Bei Fragen oder Problemen kannst du dich an den Projektmaintainer wenden:
+For questions or issues, contact the project maintainer:
 
 - **Discord:** [Fw.Schultz](https://discord.gg/tKhMCr2ZYZ)

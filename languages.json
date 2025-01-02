@@ -1,0 +1,42 @@
+{
+  "de": {
+    "no_permission": "Du hast keine Berechtigung, diesen Befehl auszuführen.",
+    "apply_settings_prompt": "Wähle die gewünschte Einstellung:",
+    "cache_cleared": "Der Cache wurde erfolgreich geleert. Gelöschte Einträge: {result}.",
+    "error_occurred": "Ein Fehler ist aufgetreten: {error_message}",
+    "file_not_found": "Die Datei `{file_name}` wurde nicht gefunden.",
+    "settings_applied": "Die `{setting_type}`-Einstellungen wurden erfolgreich angewendet.",
+    "settings_apply_failed": "Fehler beim Anwenden der Einstellungen: {error_message}",
+    "autosettings_retrieved": "Die aktuellen Autosettings wurden in der angehängten Datei bereitgestellt."
+  },
+  "en": {
+    "no_permission": "You do not have permission to execute this command.",
+    "apply_settings_prompt": "Select the desired setting:",
+    "cache_cleared": "The cache was successfully cleared. Deleted entries: {result}.",
+    "error_occurred": "An error occurred: {error_message}",
+    "file_not_found": "The file `{file_name}` was not found.",
+    "settings_applied": "The `{setting_type}` settings were successfully applied.",
+    "settings_apply_failed": "Failed to apply settings: {error_message}",
+    "autosettings_retrieved": "The current autosettings have been provided in the attached file."
+  },
+  "fr": {
+    "no_permission": "Vous n'avez pas la permission d'exécuter cette commande.",
+    "apply_settings_prompt": "Sélectionnez le paramètre souhaité :",
+    "cache_cleared": "Le cache a été effacé avec succès. Entrées supprimées : {result}.",
+    "error_occurred": "Une erreur s'est produite : {error_message}",
+    "file_not_found": "Le fichier `{file_name}` est introuvable.",
+    "settings_applied": "Les paramètres `{setting_type}` ont été appliqués avec succès.",
+    "settings_apply_failed": "Échec de l'application des paramètres : {error_message}",
+    "autosettings_retrieved": "Les paramètres automatiques actuels ont été fournis dans le fichier joint."
+  },
+  "es": {
+    "no_permission": "No tienes permiso para ejecutar este comando.",
+    "apply_settings_prompt": "Seleccione la configuración deseada:",
+    "cache_cleared": "La caché se borró con éxito. Entradas eliminadas: {result}.",
+    "error_occurred": "Ocurrió un error: {error_message}",
+    "file_not_found": "El archivo `{file_name}` no se encontró.",
+    "settings_applied": "La configuración de `{setting_type}` se aplicó con éxito.",
+    "settings_apply_failed": "Error al aplicar la configuración: {error_message}",
+    "autosettings_retrieved": "Las configuraciones automáticas actuales se han proporcionado en el archivo adjunto."
+  }
+}
