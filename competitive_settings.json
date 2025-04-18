@@ -9,10 +9,19 @@
             "value": 2
         },
         "set_max_ping_autokick": {
-            "max_ms": 500
+            "max_ms": 0
         },
-        "set_votekick_threshold": {
-            "threshold_pairs": "0,3,10,6,20,11,30,16,40,21"
+        "set_idle_autokick_time": {
+            "minutes": 0
+        },
+        "set_votekick_thresholds": {
+            "threshold_pairs": [
+                [0, 3],
+                [10, 6],
+                [20, 11],
+                [30, 16],
+                [40, 21]
+            ]
         },
         "set_autobalance_enabled": {
             "value": false
@@ -20,25 +29,464 @@
         "set_map_shuffle_enabled": {
             "enabled": false
         },
+        "set_team_switch_cooldown": {
+            "minutes": 0
+        },
         "set_autobalance_threshold": {
             "max_diff": 0
         },
-        "set_idle_autokick_time": {
-            "minutes": 0
+        "set_auto_mod_level_config": {
+            "config": {
+                "dry_run": false,
+                "enabled": false,
+                "max_level": 0,
+                "min_level": 25,
+                "kick_message": "Du verletzt unsere Level-Regeln: {violation}.\nDeine Gnadensfrist läuft ab in {kick_grace_period}s.\nDu hast wohl die vorrigen Verwarnungen missachtet.",
+                "punish_message": "Du verletzt unsere Level-Regeln: {violation}.\nDu wirst gepunisht von unserem Bot ({received_punishes}/{max_punishes}).\nNächster Check von unserem Level-Bot erfolgt in {next_check_seconds}s.",
+                "warning_message": "Achtung, {player_name}! Du verletzt unsere Level-Regeln: {violation}\nDu wirst gepunisht nach {max_warnings} Verwarnungen (du hast bereits erhalten {received_warnings}).\nNächster Check von unserem Level-Bot erfolgt in {next_check_seconds}s.",
+                "whitelist_flags": [],
+                "level_thresholds": {
+                    "officer": {
+                        "label": "Offizier",
+                        "min_level": 25,
+                        "min_players": 0
+                    },
+                    "spotter": {
+                        "label": "Spotter",
+                        "min_level": 25,
+                        "min_players": 0
+                    },
+                    "armycommander": {
+                        "label": "Kommander",
+                        "min_level": 50,
+                        "min_players": 0
+                    },
+                    "tankcommander": {
+                        "label": "Panzerkommandeur",
+                        "min_level": 25,
+                        "min_players": 0
+                    }
+                },
+                "levelbug_enabled": false,
+                "max_level_message": "Zugang zu unserem Server ist leider nicht erlaubt über Level {level}",
+                "min_level_message": "Zugang zu unserem Server ist leider erst ab Level {level} erlaubt.",
+                "violation_message": "{role} ist nicht erlaubt unter Level {level}",
+                "force_kick_message": "Du verletzt unsere Level-Regeln: {violation}.",
+                "number_of_warnings": 2,
+                "discord_webhook_url": "https://discord.com/api/webhooks/13447593....",
+                "announcement_enabled": true,
+                "announcement_message": "Dieser Server hat ein Level-Bot für bestimmte Klassen.\n\n{min_level_msg}{max_level_msg}{level_thresholds_msg}\nVielen Dank für dein Verständnis.",
+                "kick_after_max_punish": false,
+                "number_of_punishments": 2,
+                "punish_interval_seconds": 60,
+                "warning_interval_seconds": 60,
+                "kick_grace_period_seconds": 120,
+                "min_squad_players_for_kick": 0,
+                "min_server_players_for_kick": 0,
+                "min_squad_players_for_punish": 0,
+                "min_server_players_for_punish": 0,
+                "only_announce_impacted_players": false,
+                "dont_do_anything_below_this_number_of_players": 0
+            }
         },
-        "set_team_switch_cooldown": {
-            "minutes": 0
+        "set_auto_mod_solo_tank_config": {
+            "config": {
+                "dry_run": false,
+                "enabled": false,
+                "kick_message": "You violated solo tank rule on this server.\nYour grace period of {kick_grace_period}s has passed.\nYou failed to comply with the previous warnings.",
+                "punish_message": "Du hast die Solo-Tank-Regel auf unserem Server verletzt.\nDu wirst vom Bot mit seinem riesen Knüpel bestraft ({received_punishes}/{max_punishes}).\nNächster Check in {next_check_seconds}sek.",
+                "number_of_notes": 3,
+                "warning_message": "ACHTUNG, {player_name} !\n\nDu kannst auf diesem Server keinen Solo-Tank spielen !\n\nDu wirst nach {max_warnings} Warnungen bestraft (du hast bereits {received_warnings} erhalten)\n\nDer nächste Check wird automatisch in {next_check_seconds}sek stattfinden.",
+                "whitelist_flags": [
+                    "🚨"
+                ],
+                "number_of_warnings": 10,
+                "discord_webhook_url": null,
+                "immune_player_level": 0,
+                "kick_after_max_punish": false,
+                "number_of_punishments": -1,
+                "notes_interval_seconds": 120,
+                "punish_interval_seconds": 120,
+                "warning_interval_seconds": 60,
+                "kick_grace_period_seconds": 120,
+                "min_server_players_for_kick": 39,
+                "min_server_players_for_punish": 39,
+                "dont_do_anything_below_this_number_of_players": 0
+            }
+        },
+        "set_auto_mod_no_leader_config": {
+            "config": {
+                "dry_run": false,
+                "enabled": false,
+                "discord_webhook_url": "https://discord.com/api/webhooks/1344760......",
+                "whitelist_flags": [],
+                "immune_roles": [],
+                "immune_player_level": 15,
+                "dont_do_anything_below_this_number_of_players": 0,
+                "number_of_notes": 1,
+                "notes_interval_seconds": 10,
+                "number_of_warnings": 2,
+                "warning_interval_seconds": 60,
+                "warning_message": "Achtung, {player_name}! Dein Squad ({squad_name}) hat keinen Offizier. Du  wirst nach {max_warnings} Verwarnungen (du hast bereits {received_warnings} erhalten), gekickt.SOLLTET DEIN SQUAD EINEN OFFIZIER HABEN DANN WIRD SEIN NAME VOM GAMESERVER NICHT ERKANNT - ER HAT EINEN UNG\u00dcLTIGEN NAMEN UND MUSS DIESEN IM STEAMPROFIL OHNE LEERZEICHEN AM ENDE \u00c4NDERN!!Der n\u00e4chste \u00fcble check vom Bot geschieht in {next_check_seconds}s.",
+                "number_of_punishments": 3,
+                "min_squad_players_for_punish": 0,
+                "min_server_players_for_punish": 0,
+                "punish_interval_seconds": 60,
+                "punish_message": "Dein Squad ({squad_name}) braucht einen Offizier.Du wurdest gepunisht von unserem Bot ({received_punishes}/{max_punishes}).SOLLTET DEIN SQUAD EINEN OFFIZIER HABEN DANN WIRD SEIN NAME VOM GAMESERVER NICHT ERKANNT - ER HAT EINEN UNG\u00dcLTIGEN NAMEN UND MUSS DIESEN IM STEAMPROFIL OHNE LEERZEICHEN AM ENDE \u00c4NDERN!!Der n\u00e4chste \u00fcble check vom Bot geschieht in {next_check_seconds}s.",
+                "kick_after_max_punish": true,
+                "min_squad_players_for_kick": 0,
+                "min_server_players_for_kick": 0,
+                "kick_grace_period_seconds": 120,
+                "kick_message": "Dein Squad ({squad_name}) braucht einen Offizier. Deine Schonfrist ist in {kick_grace_period}s verstrichen. Scheinbar hast du alle Warnungen missachtet."
+            }
+        },
+        "set_auto_mod_seeding_config": {
+            "dry_run": false,
+            "enabled": false,
+            "discord_webhook_url": "https://discord.com/api/webhooks/134476.......",
+            "whitelist_flags": [],
+            "immune_roles": [],
+            "immune_player_level": 0,
+            "dont_do_anything_below_this_number_of_players": 0,
+            "announcement_enabled": true,
+            "announcement_message": "Willkommen Soldat! Geil dass Du bei uns bist!! Wir SEEDEN den BündnisServer von KL/TP und den 100.!! So beginnen die geilsten Spiele! \nBis dahin gilt -> bis 39 Spieler MID CAP ONLY, NO TANKS ausser die RECON-Tanks & NO ARTI.  \n Ab 40 Spieler beginnt der volle WAHNSINN und ihr k\u00f6nnt die Sau rauslassen!! \nDanke Soldat! Das Bündnis KL/TP/100. gibt nun das FEUER FREI und ATTACKE!!",
+            "number_of_warnings": 2,
+            "warning_interval_seconds": 60,
+            "warning_message": "Achtung, {player_name}! Du verst\u00f6\u00dft gegen die Seeding-Regeln auf unserem Server: {violation}\nDu wirst gepunisht nach {max_warnings} Warnungen (du hast bereits erhalten {received_warnings}).\nN\u00e4chster Check vom Bot findet statt in {next_check_seconds}s.",
+            "number_of_punishments": -1,
+            "min_squad_players_for_punish": 0,
+            "min_server_players_for_punish": 0,
+            "punish_interval_seconds": 60,
+            "punish_message": "Du missachtest unsere Seeding-Regeln: {violation}.\nDu wurdest gepunisht von unserem Bot ({received_punishes}/{max_punishes}).\nN\u00e4chster Check vom Bot findet statt in {next_check_seconds} seconds",
+            "kick_after_max_punish": false,
+            "min_squad_players_for_kick": 0,
+            "min_server_players_for_kick": 0,
+            "kick_grace_period_seconds": 120,
+            "kick_message": "You violated seeding rules on this server.\nYour grace period of {kick_grace_period}s has passed.\nYou failed to comply with the previous warnings.",
+            "disallowed_roles": {
+                "min_players": 0,
+                "max_players": 0,
+                "roles": {},
+                "violation_message": "{role} sind nicht erlaubt, wenn der Server im Seeding-Modus ist."
+            },
+            "disallowed_weapons": {
+                "min_players": 0,
+                "max_players": 39,
+                "weapons": {
+                    "HULL DT [IS-1]": "IS-1",
+                    "45MM M1937 [T70]": "T70",
+                    "COAXIAL DT [T70]": "T70",
+                    "D-5T 85MM [IS-1]": "IS-1",
+                    "HULL DT [T34/76]": "T34/T76",
+                    "COAXIAL DT [IS-1]": "IS-1",
+                    "QF 75MM [Cromwell]": "Cromwell",
+                    "76MM ZiS-5 [T34/76]": "T34/76",
+                    "COAXIAL DT [T34/76]": "T34/76",
+                    "HULL BESA [Cromwell]": "Cromwell",
+                    "155MM HOWITZER [M114]": "Artillery shells",
+                    "150MM HOWITZER [sFH 18]": "Artillery shells",
+                    "COAXIAL BESA [Cromwell]": "Cromwell",
+                    "COAXIAL BESA [Tetrarch]": "Tetrarch",
+                    "COAXIAL M1919 [Firefly]": "Firefly",
+                    "QF 17-POUNDER [Firefly]": "Firefly",
+                    "QF 2-POUNDER [Tetrarch]": "Tetrarch",
+                    "HULL M1919 [Stuart M5A1]": "Stuart M5A1",
+                    "37MM CANNON [Stuart M5A1]": "Stuart M5A1",
+                    "COAXIAL M1919 [Stuart M5A1]": "Stuart M5A1",
+                    "HULL M1919 [Sherman M4A3E2]": "Sherman M4A3E2",
+                    "75MM M3 GUN [Sherman M4A3E2]": "Sherman M4A3E2",
+                    "122MM HOWITZER [M1938 (M-30)]": "Artillery shells",
+                    "QF 25-POUNDER [QF 25-Pounder]": "Artillery shells",
+                    "20MM KWK 30 [Sd.Kfz.121 Luchs]": "Luchs",
+                    "COAXIAL M1919 [Sherman M4A3E2]": "Sherman M4A3E2 ",
+                    "HULL M1919 [Sherman M4A3(75)W]": "Sherman M4A3(75)W",
+                    "HULL MG34 [Sd.Kfz.171 Panther]": "Sd.Kfz.171 Panther",
+                    "HULL MG34 [Sd.Kfz.181 Tiger 1]": "Sd.Kfz.181 Tiger 1",
+                    "75MM CANNON [Sherman M4A3(75)W]": "Sherman M4A3(75)W",
+                    "COAXIAL MG34 [Sd.Kfz.121 Luchs]": "Luchs",
+                    "HULL M1919 [Sherman M4A3E2(76)]": "Sherman M4A3E2",
+                    "75MM CANNON [Sd.Kfz.171 Panther]": "Sd.Kfz.171 Panther",
+                    "76MM M1 GUN [Sherman M4A3E2(76)]": "Sherman M4A3E2",
+                    "HULL MG34 [Sd.Kfz.161 Panzer IV]": "Sd.Kfz.161 Panzer IV",
+                    "COAXIAL M1919 [Sherman M4A3(75)W]": "Sherman M4A3(75)W",
+                    "COAXIAL MG34 [Sd.Kfz.171 Panther]": "Sd.Kfz.171 Panther",
+                    "COAXIAL MG34 [Sd.Kfz.181 Tiger 1]": "Sd.Kfz.181 Tiger 1",
+                    "75MM CANNON [Sd.Kfz.161 Panzer IV]": "Sd.Kfz.161 Panzer IV",
+                    "COAXIAL M1919 [Sherman M4A3E2(76)]": "Sherman M4A3E2",
+                    "88 KWK 36 L/56 [Sd.Kfz.181 Tiger 1]": "Sd.Kfz.181 Tiger 1",
+                    "COAXIAL MG34 [Sd.Kfz.161 Panzer IV]": "Sd.Kfz.161 Panzer IV",
+                    "HULL BESA 7.92mm [Churchill Mk.III]": "Churchill Mk.III",
+                    "COAXIAL BESA 7.92mm [Churchill Mk.III]": "Churchill Mk.III",
+                    "OQF 6 - POUNDER Mk.V [Churchill Mk.III]": "Churchill Mk.III"
+                },
+                "violation_message": "dem Bot gepunisht. {weapon} sind nicht erlaubt, wenn der Server im Seeding-Modus ist."
+            },
+            "enforce_cap_fight": {
+                "min_players": 0,
+                "max_players": 39,
+                "max_caps": 3,
+                "skip_warning": false,
+                "violation_message": "Bitte bis 40 Spieler MID CAP only - Feuer frei Soldat!"
+            }
+        },
+        "set_tk_ban_on_connect_config": {
+            "config": {
+                "enabled": false,
+                "message": "Das erste was dir auf unserem Server einf\u00e4llt ist Teamkills zu machen? Du wirst gebannt von unserem Bot.",
+                "author_name": "HATERS GONNA HATE",
+                "blacklist_id": null,
+                "ban_duration": {
+                    "minutes": 0,
+                    "hours": 24,
+                    "days": 0,
+                    "weeks": 0,
+                    "years": 0
+                },
+                "excluded_weapons": [],
+                "max_time_after_connect_minutes": 5,
+                "ignore_tk_after_n_kills": 1,
+                "ignore_tk_after_n_deaths": 2,
+                "whitelist_players": {
+                    "has_flag": [],
+                    "is_vip": true,
+                    "has_at_least_n_sessions": 10
+                },
+                "teamkill_tolerance_count": 3,
+                "discord_webhook_url": null,
+                "discord_webhook_message": "{player} wurde gebannt, weil im nichts anderes einfiel gleich nach dem Connecten ein Teamkill zu machen."
+            }
+        },
+        "set_seed_vip_config": {
+            "config": {
+                "enabled": false,
+                "dry_run": false,
+                "language": "de_DE",
+                "hooks": [
+                    {
+                        "url": "https://discord.com/api/webhooks/1348671391.............."
+                    }
+                ],
+                "player_announce_thresholds": [
+                    10,
+                    20,
+                    30
+                ],
+                "poll_time_seeding": 30,
+                "poll_time_seeded": 300,
+                "nice_time_delta": true,
+                "nice_expiration_date": true,
+                "requirements": {
+                    "buffer": {
+                        "seconds": 0,
+                        "minutes": 10,
+                        "hours": 0
+                    },
+                    "min_allies": 0,
+                    "min_axis": 0,
+                    "max_allies": 20,
+                    "max_axis": 20,
+                    "online_when_seeded": true,
+                    "minimum_play_time": {
+                        "seconds": 0,
+                        "minutes": 15,
+                        "hours": 0
+                    }
+                },
+                "player_messages": {
+                    "seeding_in_progress_message": "Server hat {player_count} Player erreicht.",
+                    "seeding_complete_message": "Der Server ist nun offen. Also Feuer Frei und Attacke ab jetzt!",
+                    "player_count_message": "{num_allied_players} - {num_axis_players}",
+                    "reward_player_message": "Vielen Dank das du uns beim Seeden geholfen hast.\n\nDaf\u00fcr hast du {vip_reward} VIP auf unserem Server erhalten.",
+                    "reward_player_message_no_vip": "Vielen Dank das du uns beim Seeden geholfen hast."
+                },
+                "reward": {
+                    "forward": false,
+                    "player_name_format_not_current_vip": "{player_name} Seed VIP",
+                    "cumulative": true,
+                    "timeframe": {
+                        "minutes": 0,
+                        "hours": 0,
+                        "days": 5,
+                        "weeks": 0
+                    }
+                }
+            }
+        },
+        "set_chat_commands_config": {
+            "config": {
+                "enabled": false,
+                "describe_words": [
+                    "!help"
+                ],
+                "command_words": [
+                    {
+                        "words": [
+                            "!seedrules",
+                            "@seedrules"
+                        ],
+                        "description": "Unsere SeedingRegeln",
+                        "message": "****SEEDING-RULES****\n\n- Bis 40 Spieler (20 vs 20) Kampf nur um den mittleren Punkt\n\n- Mic-Pflicht für alle Spieler und auf deutsch ++WICHTIG++\n\n- Die (RedZone)-Garnies in der D bzw. G oder in der 4er und 7er Linie nicht abbauen\n\n- Es sind nur Reacon-Tanks erlaubt\n- Keine Arty erlaubt\n\n- Die Admins helfen euch, wenn ihr !admin + NAME + GRUND in den Chat eingebt."
+                    },
+                    {
+                        "words": [
+                            "!rules",
+                            "@rules"
+                        ],
+                        "description": "Unsere Regeln nach dem Seeden",
+                        "message": "****RULES****\n\n- Mic-Pflicht für alle Spieler auf deutsch ++WICHTIG++\n\n- Solo-Tanks sind kurzfristig erlaubt, also nehmt die Leute auf!!!\n\n- HQ-Farming ist erlaubt\n\n- Getrolle (gezielte TKs, wildes Gespame via Voice oder Chat, etc) ist nicht erlaubt\n\n- Die Admins helfen euch, wenn ihr !admin + NAME + GRUND in den Chat eingebt."
+                    },
+                    {
+                        "words": [
+                            "!streaming",
+                            "@streaming"
+                        ],
+                        "description": "Streaming",
+                        "message": "***Streaming***\n\n- Du kannst gerne auf unserem Server streamen, nutze dann aber ein Map-Overlay.\n\nFalls du nicht weißt, was das ist und wie das funktioniert, melde Dich bei uns im Discord\n\n {discord_invite_url}"
+                    },
+                    {
+                        "words": [
+                            "!pling",
+                            "@pling"
+                        ],
+                        "description": "Wer hat mich umgebracht?",
+                        "message": "Du wurdest ermordet von {last_nemesis_name} mit der Waffe: {last_nemesis_weapon}"
+                    },
+                    {
+                        "words": [
+                            "!discord"
+                        ],
+                        "description": "Discord Einladung",
+                        "message": "Kommt auf unser Discord {discord_invite_url}"
+                    },
+                    {
+                        "words": [
+                            "!vip"
+                        ],
+                        "description": "VIP",
+                        "message": "Verdiene dir den VIP-Status auf unserem Server durch das Mithelfen beim Seeden. Du hast VIP bei uns bis zum {vip_expiration}"
+                    },
+                    {
+                        "words": [
+                            "!peng",
+                            "@peng"
+                        ],
+                        "description": "Wen habe ich ermordet?",
+                        "message": "Du hast \n{last_victim_name}\n ermordet \n\n mit der Waffe:\n{last_victim_weapon}"
+                    },
+                    {
+                        "words": [
+                            "!me"
+                        ],
+                        "description": "Deine Statistik auf unserem Server",
+                        "message": "Das sind deine momentanen Stats gewesen!"
+                    },
+                    {
+                        "words": [
+                            "!top"
+                        ],
+                        "description": "Wer sind die Top-Spieler?",
+                        "message": "Das sind momentan die Top-Spieler/Squads auf unserem Server."
+                    }
+                ]
+            }
+        },
+        "set_rcon_chat_commands_config": {
+            "config": {
+                "enabled": false,
+                "describe_words": [
+                    "!clan",
+                    "@clan"
+                ],
+                "command_words": [
+                    {
+                        "words": [
+                            "!switch",
+                            "@switch"
+                        ],
+                        "description": "Switch yourself in side",
+                        "commands": {
+                            "switch_player_now": {
+                                "player_name": "{player_name}"
+                            }
+                        },
+                        "enabled": false,
+                        "conditions": {
+                            "player_flag": {
+                                "flags": [
+                                    "\ud83d\udd01"
+                                ]
+                            },
+                            "player_count": {
+                                "max": 100,
+                                "min": 0
+                            }
+                        }
+                    },
+                    {
+                        "words": [
+                            "!cam"
+                        ],
+                        "description": "Add yourself to admin cam list",
+                        "commands": {
+                            "add_admin": {
+                                "role": "junior",
+                                "player_id": "{player_id}",
+                                "description": "{player_name}"
+                            }
+                        },
+                        "enabled": false,
+                        "conditions": {
+                            "player_id": {
+                                "player_ids": [
+                                    "765611...",
+                                    "765612..."
+                                ]
+                            }
+                        }
+                    },
+                    {
+                        "words": [
+                            "!redeploy",
+                            "!r"
+                        ],
+                        "description": "Punishes yourself to redeploy in 10s instead of 20s.",
+                        "commands": {
+                            "punish": {
+                                "by": "Admin",
+                                "reason": "Executing redeploy command",
+                                "player_name": "{player_name}"
+                            }
+                        },
+                        "enabled": false,
+                        "conditions": {
+                            "player_flag": {
+                                "flags": [
+                                    "\ud83d\udc7b"
+                                ]
+                            },
+                            "player_count": {
+                                "max": 40,
+                                "min": 0
+                            }
+                        }
+                    }
+                ]
+            }
         }
     },
     "rules": [
         {
             "commands": {
                 "set_broadcast": {
-                    "save": true,
-                    "message": "                                   Viel Erfolg und habt Spaß.                                   Good luck and have fun.                                   Удачи и приятного времяпрепровождения.                                   Bonne chance et amusez-vous."
+                    "message": "                                   Viel Erfolg und habt Spaß.                                   Good luck and have fun.                                   Желаю тебе удачи и хорошо повеселиться.                                   Bonne chance et amusez-vous."
                 },
                 "set_welcome_message": {
-                    "message": "Viel Erfolg und habt Spaß.\nGood luck and have fun.\nУдачи и приятного времяпрепровождения.\nBonne chance et amusez-vous."
+                    "message": "Viel Erfolg und habt Spaß.\nGood luck and have fun.\nЖелаю тебе удачи и хорошо повеселиться.\nBonne chance et amusez-vous."
+                },
+                "set_votemap_whitelist": {
+                    "map_names": [
+                        "hurtgenforest_warfare_V2"
+                    ]
                 }
             }
         }
